@@ -207,21 +207,19 @@
     font-weight:700;font-size:0.82rem;padding:9px 16px;
     letter-spacing:0.01em;
   }
-  .urgency-bar span.time{font-variant-numeric:tabular-nums;color:#ffd166;margin-left:4px;}
 
-  /* Testimonials placeholder */
-  .testi-card{
-    background:var(--bg-card);border:2px dashed var(--border);border-radius:14px;
-    padding:18px;margin-bottom:12px;text-align:center;
+  /* Areas grid */
+  .areas-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0;}
+  .area-chip{
+    background:var(--bg-card);border:1px solid var(--border);border-radius:10px;
+    padding:12px 14px;font-size:0.88rem;font-weight:600;color:var(--ink);
+    display:flex;align-items:center;gap:8px;
   }
-  .testi-avatar{
-    width:40px;height:40px;border-radius:50%;background:var(--tint);
-    color:var(--brand);font-weight:800;display:flex;align-items:center;
-    justify-content:center;margin:0 auto 8px;
+  .area-chip .n{
+    flex-shrink:0;width:22px;height:22px;border-radius:6px;background:var(--tint);
+    color:var(--brand);font-size:0.72rem;font-weight:800;display:flex;
+    align-items:center;justify-content:center;
   }
-  .testi-stars{color:var(--border);letter-spacing:2px;margin-bottom:8px;}
-  .testi-quote{font-style:italic;font-size:0.9rem;margin-bottom:8px;}
-  .testi-name{font-size:0.8rem;font-weight:700;color:var(--ink-soft);margin-bottom:0;}
 
   /* Trust row */
   .trust-row{
@@ -256,26 +254,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
-<div class="urgency-bar">Oferta de hoje termina em <span class="time" id="countdown">00:00:00</span></div>
-<script>
-(function(){
-  var el=document.getElementById('countdown');
-  function msUntilMidnight(){
-    var now=new Date();
-    var mid=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0);
-    return mid-now;
-  }
-  function tick(){
-    var diff=msUntilMidnight();
-    var h=Math.floor(diff/3600000);
-    var m=Math.floor((diff%3600000)/60000);
-    var s=Math.floor((diff%60000)/1000);
-    el.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
-  }
-  tick();
-  setInterval(tick,1000);
-})();
-</script>
+<div class="urgency-bar">Oferta por tempo limitado: R$37 no lugar de R$197</div>
 
 <header class="site">
   <div class="wrap">
@@ -459,30 +438,24 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
+<!-- ÁREAS COBERTAS -->
 <section class="alt">
   <div class="wrap">
-    <div class="kicker">Quem já usa recomenda</div>
-    <h2>Espaço reservado pros seus depoimentos</h2>
-    <p>Assim que você tiver prints, avaliações ou relatos reais de quem usa o ClinCards na clínica, encaixamos aqui.</p>
-
-    <div class="testi-card">
-      <div class="testi-avatar">?</div>
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">Espaço reservado pro depoimento real de um aluno ou clínica-escola.</p>
-      <p class="testi-name">Nome · Contexto</p>
-    </div>
-    <div class="testi-card">
-      <div class="testi-avatar">?</div>
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">Espaço reservado pro depoimento real de um aluno ou clínica-escola.</p>
-      <p class="testi-name">Nome · Contexto</p>
-    </div>
-    <div class="testi-card">
-      <div class="testi-avatar">?</div>
-      <div class="testi-stars">★★★★★</div>
-      <p class="testi-quote">Espaço reservado pro depoimento real de um aluno ou clínica-escola.</p>
-      <p class="testi-name">Nome · Contexto</p>
+    <div class="kicker">Cobertura completa</div>
+    <h2>11 áreas clínicas, 120 cards</h2>
+    <p>Do diagnóstico à urgência, o baralho cobre a rotina inteira da clínica integrada.</p>
+    <div class="areas-grid">
+      <div class="area-chip"><span class="n">1</span>Anestesia Local</div>
+      <div class="area-chip"><span class="n">2</span>Cirurgia Oral Menor</div>
+      <div class="area-chip"><span class="n">3</span>Endodontia</div>
+      <div class="area-chip"><span class="n">4</span>Periodontia</div>
+      <div class="area-chip"><span class="n">5</span>Dentística</div>
+      <div class="area-chip"><span class="n">6</span>Prótese</div>
+      <div class="area-chip"><span class="n">7</span>Odontopediatria</div>
+      <div class="area-chip"><span class="n">8</span>Radiologia</div>
+      <div class="area-chip"><span class="n">9</span>Semiologia e Diagnóstico</div>
+      <div class="area-chip"><span class="n">10</span>Biossegurança</div>
+      <div class="area-chip"><span class="n">11</span>Urgências Médicas</div>
     </div>
   </div>
 </section>
