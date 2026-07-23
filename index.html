@@ -11,15 +11,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314385c'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230c2b47'/%3E%3C/svg%3E">
 <style>
   :root{
-    --brand:#14385c;
-    --brand-dark:#0c2740;
-    --cta:#2f6fed;
-    --cta-dark:#1c4fc0;
+    --brand:#0c2b47;
+    --brand-dark:#071c30;
+    --cta:#204ecb;
+    --cta-dark:#15379c;
     --danger-dark:#a83a30;
-    --tint:#e3ecf9;
+    --tint:#e1e9f5;
     --bg:#eef3f8;
     --bg-card:#ffffff;
     --ink:#101f2e;
@@ -201,6 +201,34 @@
   footer{padding:28px 0 100px;text-align:center;}
   footer p{font-size:0.78rem;color:var(--ink-soft);}
 
+  /* Urgency bar */
+  .urgency-bar{
+    background:var(--brand-dark);color:#fff;text-align:center;
+    font-weight:700;font-size:0.82rem;padding:9px 16px;
+    letter-spacing:0.01em;
+  }
+  .urgency-bar span.time{font-variant-numeric:tabular-nums;color:#ffd166;margin-left:4px;}
+
+  /* Testimonials placeholder */
+  .testi-card{
+    background:var(--bg-card);border:2px dashed var(--border);border-radius:14px;
+    padding:18px;margin-bottom:12px;text-align:center;
+  }
+  .testi-avatar{
+    width:40px;height:40px;border-radius:50%;background:var(--tint);
+    color:var(--brand);font-weight:800;display:flex;align-items:center;
+    justify-content:center;margin:0 auto 8px;
+  }
+  .testi-stars{color:var(--border);letter-spacing:2px;margin-bottom:8px;}
+  .testi-quote{font-style:italic;font-size:0.9rem;margin-bottom:8px;}
+  .testi-name{font-size:0.8rem;font-weight:700;color:var(--ink-soft);margin-bottom:0;}
+
+  /* Trust row */
+  .trust-row{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:14px;
+    margin:14px 0 4px;font-size:0.78rem;color:var(--ink-soft);font-weight:600;
+  }
+
   @media(min-width:680px){
     h1{font-size:2.6rem;}
     h2{font-size:1.9rem;}
@@ -228,13 +256,34 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
+<div class="urgency-bar">Oferta de hoje termina em <span class="time" id="countdown">00:00:00</span></div>
+<script>
+(function(){
+  var el=document.getElementById('countdown');
+  function msUntilMidnight(){
+    var now=new Date();
+    var mid=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0);
+    return mid-now;
+  }
+  function tick(){
+    var diff=msUntilMidnight();
+    var h=Math.floor(diff/3600000);
+    var m=Math.floor((diff%3600000)/60000);
+    var s=Math.floor((diff%60000)/1000);
+    el.textContent=(h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+  }
+  tick();
+  setInterval(tick,1000);
+})();
+</script>
+
 <header class="site">
   <div class="wrap">
     <div class="logo">
       <span class="cards-glyph" aria-hidden="true">
         <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="4" width="14" height="15" rx="2.5" transform="rotate(-8 1 4)" fill="#e3ecf9" stroke="#14385c" stroke-width="1.4"/>
-          <rect x="7" y="1" width="14" height="15" rx="2.5" fill="#14385c"/>
+          <rect x="1" y="4" width="14" height="15" rx="2.5" transform="rotate(-8 1 4)" fill="#e1e9f5" stroke="#0c2b47" stroke-width="1.4"/>
+          <rect x="7" y="1" width="14" height="15" rx="2.5" fill="#0c2b47"/>
         </svg>
       </span>
       <span class="clin">Clin</span><span class="cards">Cards</span>
@@ -410,11 +459,62 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   </div>
 </section>
 
+<!-- DEPOIMENTOS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="kicker">Quem já usa recomenda</div>
+    <h2>Espaço reservado pros seus depoimentos</h2>
+    <p>Assim que você tiver prints, avaliações ou relatos reais de quem usa o ClinCards na clínica, encaixamos aqui.</p>
+
+    <div class="testi-card">
+      <div class="testi-avatar">?</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">Espaço reservado pro depoimento real de um aluno ou clínica-escola.</p>
+      <p class="testi-name">Nome · Contexto</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-avatar">?</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">Espaço reservado pro depoimento real de um aluno ou clínica-escola.</p>
+      <p class="testi-name">Nome · Contexto</p>
+    </div>
+    <div class="testi-card">
+      <div class="testi-avatar">?</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-quote">Espaço reservado pro depoimento real de um aluno ou clínica-escola.</p>
+      <p class="testi-name">Nome · Contexto</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS NA PRÁTICA -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Resultado na prática</div>
+    <h2>Usando o ClinCards, você ganha</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div><h3>Mais agilidade no atendimento</h3><p style="margin:0">Consulta o protocolo em segundos, sem interromper o paciente pra abrir o livro.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div><h3>Mais segurança nas urgências</h3><p style="margin:0">O alerta vermelho te avisa exatamente quando parar e chamar o supervisor.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div><h3>Mais organização na rotina</h3><p style="margin:0">Cards por área, prontos pra levar no jaleco, sem perder tempo montando material.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- OFERTA -->
 <section id="oferta">
   <div class="wrap">
     <div class="kicker">Oferta</div>
     <h2>Empilhando o valor</h2>
+    <p class="lead" style="margin-bottom:6px">Kit completo. Uso vitalício, é seu pra sempre.</p>
     <table class="value-table">
       <tbody>
         <tr><td>ClinCards: 120 cards clínicos (11 áreas)</td><td>R$97</td></tr>
@@ -428,6 +528,11 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
     </table>
     <div class="btn-wrap">
       <a class="btn" href="https://pay.cakto.com.br/328k8g8_986696" onclick="fbq('track','InitiateCheckout')">Quero meu ClinCards agora por R$37</a>
+    </div>
+    <div class="trust-row">
+      <span>🔒 Compra segura</span>
+      <span>✅ Satisfação garantida</span>
+      <span>🛡️ Dados protegidos</span>
     </div>
   </div>
 </section>
@@ -452,6 +557,10 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
     <details>
       <summary>Isso é pra estudar pra prova?</summary>
       <p>Não. O ClinCards foi feito pra consultar durante o atendimento, não pra decorar antes de uma avaliação.</p>
+    </details>
+    <details>
+      <summary>Recebo acesso imediato após o pagamento?</summary>
+      <p>Sim. Assim que o pagamento é aprovado na Cakto, você recebe o link de download por e-mail na hora.</p>
     </details>
     <details>
       <summary>Recebo o kit físico?</summary>
