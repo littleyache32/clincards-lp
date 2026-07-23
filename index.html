@@ -3,26 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ClinCards — Kit de Bolso pra Rotina Clínica</title>
-<meta name="description" content="120 cards de bolso com o protocolo que você precisa checar em segundos — direto na cadeira clínica, não pra decorar pra prova.">
-<meta property="og:title" content="ClinCards — Kit de Bolso pra Rotina Clínica">
-<meta property="og:description" content="120 cards de bolso com o protocolo que você precisa checar em segundos — direto na cadeira clínica.">
+<title>ClinCards: Kit de Bolso pra Rotina Clínica</title>
+<meta name="description" content="120 cards de bolso com o protocolo que você precisa checar em segundos, direto na cadeira clínica, não pra decorar pra prova.">
+<meta property="og:title" content="ClinCards: Kit de Bolso pra Rotina Clínica">
+<meta property="og:description" content="120 cards de bolso com o protocolo que você precisa checar em segundos, direto na cadeira clínica.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23177d82'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314385c'/%3E%3C/svg%3E">
 <style>
   :root{
-    --teal:#177d82;
-    --teal-dark:#125f63;
-    --alert:#d86552;
-    --alert-dark:#c14f3d;
-    --bg:#f2efe8;
+    --brand:#14385c;
+    --brand-dark:#0c2740;
+    --cta:#2f6fed;
+    --cta-dark:#1c4fc0;
+    --danger-dark:#a83a30;
+    --tint:#e3ecf9;
+    --bg:#eef3f8;
     --bg-card:#ffffff;
-    --ink:#233039;
-    --ink-soft:#4b5a63;
-    --border:#e2ddcf;
+    --ink:#101f2e;
+    --ink-soft:#4a5c72;
+    --border:#d7e2ec;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -39,7 +41,7 @@
 
   /* Logo */
   .logo{font-weight:800;font-size:1.3rem;letter-spacing:-0.02em;}
-  .logo span.clin{color:var(--teal);}
+  .logo span.clin{color:var(--brand);}
   .logo span.cards{color:var(--ink);}
   header.site{padding:18px 0;}
   header.site .wrap{display:flex;align-items:center;justify-content:space-between;}
@@ -53,28 +55,44 @@
   h3{font-size:1.1rem;font-weight:700;margin-bottom:8px;}
   p{color:var(--ink-soft);margin-bottom:14px;font-size:1rem;}
   p.lead{color:var(--ink);font-size:1.08rem;}
-  .kicker{color:var(--teal);font-weight:700;text-transform:uppercase;font-size:0.78rem;letter-spacing:0.06em;margin-bottom:10px;}
+  .kicker{color:var(--brand);font-weight:700;text-transform:uppercase;font-size:0.78rem;letter-spacing:0.06em;margin-bottom:10px;}
 
   /* Buttons */
   .btn{
     display:block;width:100%;text-align:center;
-    background:var(--alert);color:#fff;
+    background:var(--cta);color:#fff;
     font-weight:700;font-size:1.05rem;
     padding:16px 20px;border-radius:12px;
     text-decoration:none;
-    box-shadow:0 6px 0 var(--alert-dark);
+    box-shadow:0 6px 0 var(--cta-dark);
     transition:transform .08s ease;
     border:none;cursor:pointer;
   }
-  .btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--alert-dark);}
+  .btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--cta-dark);}
+  .btn-ghost{
+    background:transparent;color:var(--brand);
+    border:2px solid var(--brand);box-shadow:none;
+    padding:14px 20px;
+  }
+  .btn-ghost:active{transform:translateY(2px);box-shadow:none;}
   .btn-wrap{margin:18px 0 8px;}
   .price-line{text-align:center;font-size:0.95rem;color:var(--ink-soft);margin-top:2px;}
   .price-old{text-decoration:line-through;opacity:0.65;margin-right:6px;}
-  .price-new{color:var(--alert);font-weight:800;font-size:1.15rem;}
+  .price-new{color:var(--cta);font-weight:800;font-size:1.15rem;}
 
   /* Hero */
   .hero{padding-top:32px;}
-  .hero-badge{display:inline-block;background:#e7f2f2;color:var(--teal-dark);font-weight:700;font-size:0.78rem;padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+  .hero-badge{display:inline-block;background:var(--tint);color:var(--brand-dark);font-weight:700;font-size:0.78rem;padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+
+  /* Image placeholders */
+  .img-placeholder{
+    border:2px dashed var(--border);background:var(--bg-card);
+    border-radius:16px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:6px;
+    color:var(--ink-soft);font-size:0.85rem;text-align:center;
+    padding:20px;margin:20px 0;
+  }
+  .img-placeholder .icon{font-size:1.8rem;}
 
   /* Problem list */
   .problem-list{list-style:none;margin:18px 0;}
@@ -84,7 +102,7 @@
     color:var(--ink);font-weight:500;
   }
   .problem-list li:last-child{border-bottom:none;}
-  .problem-list .mark{color:var(--alert);font-weight:800;flex-shrink:0;}
+  .problem-list .mark{color:var(--brand);font-weight:800;flex-shrink:0;}
 
   /* Solution steps */
   .steps{margin:18px 0;}
@@ -92,7 +110,7 @@
   .step:last-child{border-bottom:none;}
   .step-num{
     flex-shrink:0;width:32px;height:32px;border-radius:8px;
-    background:var(--teal);color:#fff;font-weight:800;
+    background:var(--brand);color:#fff;font-weight:800;
     display:flex;align-items:center;justify-content:center;font-size:0.95rem;
   }
 
@@ -102,15 +120,15 @@
     scroll-snap-align:start;
     flex:0 0 240px;
     background:#fff;border:1px solid var(--border);border-radius:16px;
-    padding:18px;box-shadow:0 2px 10px rgba(35,48,57,0.06);
+    padding:18px;box-shadow:0 2px 10px rgba(16,31,46,0.06);
   }
-  .demo-card .area{color:var(--teal);font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;}
+  .demo-card .area{color:var(--brand);font-weight:700;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;}
   .demo-card h4{font-size:1.05rem;font-weight:800;margin-bottom:10px;}
   .demo-card .row{font-size:0.85rem;color:var(--ink-soft);margin-bottom:6px;}
   .demo-card .row b{color:var(--ink);}
   .demo-card .alert-box{
     margin-top:10px;background:#fbeae7;border:1px solid #f0c7bd;
-    color:var(--alert-dark);font-size:0.8rem;font-weight:700;
+    color:var(--danger-dark);font-size:0.8rem;font-weight:700;
     padding:8px 10px;border-radius:8px;
   }
   .demo-caption{color:var(--ink-soft);font-style:italic;font-size:0.92rem;margin-top:4px;}
@@ -120,7 +138,7 @@
   .check-list li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;font-weight:600;}
   .check-list .tick{
     flex-shrink:0;width:22px;height:22px;border-radius:50%;
-    background:var(--teal);color:#fff;font-size:0.75rem;font-weight:800;
+    background:var(--brand);color:#fff;font-size:0.75rem;font-weight:800;
     display:flex;align-items:center;justify-content:center;margin-top:1px;
   }
 
@@ -131,8 +149,8 @@
   .value-table td:last-child{text-align:right;font-weight:700;white-space:nowrap;}
   .value-table tr.total td{font-weight:800;border-top:2px solid var(--border);}
   .value-table tr.total td:last-child{text-decoration:line-through;opacity:0.6;}
-  .value-table tr.today td{background:#e7f2f2;font-weight:800;font-size:1.05rem;color:var(--teal-dark);}
-  .value-table tr.today td:last-child{color:var(--alert);font-size:1.3rem;}
+  .value-table tr.today td{background:var(--tint);font-weight:800;font-size:1.05rem;color:var(--brand-dark);}
+  .value-table tr.today td:last-child{color:var(--cta);font-size:1.3rem;}
 
   /* Bonus cards */
   .bonus-card{
@@ -141,21 +159,18 @@
   }
   .bonus-num{
     flex-shrink:0;width:30px;height:30px;border-radius:8px;
-    background:#e7f2f2;color:var(--teal-dark);font-weight:800;
+    background:var(--tint);color:var(--brand-dark);font-weight:800;
     display:flex;align-items:center;justify-content:center;font-size:0.9rem;
   }
   .bonus-card p{margin-bottom:0;font-size:0.92rem;}
+  .bonus-value{color:var(--brand);font-weight:700;font-size:0.8rem;}
 
   /* Guarantee */
   .guarantee-box{
-    background:#fff;border:2px dashed var(--teal);border-radius:16px;
+    background:#fff;border:2px dashed var(--brand);border-radius:16px;
     padding:22px;text-align:center;margin:18px 0;
   }
-  .guarantee-box .seal{
-    width:56px;height:56px;border-radius:50%;background:var(--teal);
-    color:#fff;font-weight:800;font-size:1.4rem;
-    display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
-  }
+  .guarantee-box .seal-img{width:110px;height:110px;margin:0 auto 14px;object-fit:contain;}
 
   /* FAQ */
   details{
@@ -164,8 +179,8 @@
   }
   summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;}
   summary::-webkit-details-marker{display:none;}
-  summary::after{content:'+';font-size:1.3rem;color:var(--teal);flex-shrink:0;}
-  details[open] summary::after{content:'–';}
+  summary::after{content:'+';font-size:1.3rem;color:var(--brand);flex-shrink:0;}
+  details[open] summary::after{content:'\2013';}
   details p{margin-top:10px;margin-bottom:0;}
 
   /* Final CTA */
@@ -177,11 +192,11 @@
     background:#fff;border-top:1px solid var(--border);
     padding:10px 16px calc(10px + env(safe-area-inset-bottom));
     display:flex;align-items:center;gap:12px;
-    box-shadow:0 -4px 16px rgba(35,48,57,0.08);
+    box-shadow:0 -4px 16px rgba(16,31,46,0.08);
   }
-  .sticky-bar .price{flex-shrink:0;font-weight:800;color:var(--alert);font-size:1.05rem;}
+  .sticky-bar .price{flex-shrink:0;font-weight:800;color:var(--cta);font-size:1.05rem;}
   .sticky-bar .price small{display:block;font-weight:600;color:var(--ink-soft);font-size:0.7rem;text-decoration:line-through;}
-  .sticky-bar .btn{padding:12px 16px;font-size:0.95rem;box-shadow:0 4px 0 var(--alert-dark);}
+  .sticky-bar .btn{padding:12px 16px;font-size:0.95rem;box-shadow:0 4px 0 var(--cta-dark);}
 
   footer{padding:28px 0 100px;text-align:center;}
   footer p{font-size:0.78rem;color:var(--ink-soft);}
@@ -218,8 +233,8 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
     <div class="logo">
       <span class="cards-glyph" aria-hidden="true">
         <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1" y="4" width="14" height="15" rx="2.5" transform="rotate(-8 1 4)" fill="#e7f2f2" stroke="#177d82" stroke-width="1.4"/>
-          <rect x="7" y="1" width="14" height="15" rx="2.5" fill="#177d82"/>
+          <rect x="1" y="4" width="14" height="15" rx="2.5" transform="rotate(-8 1 4)" fill="#e3ecf9" stroke="#14385c" stroke-width="1.4"/>
+          <rect x="7" y="1" width="14" height="15" rx="2.5" fill="#14385c"/>
         </svg>
       </span>
       <span class="clin">Clin</span><span class="cards">Cards</span>
@@ -232,10 +247,15 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="hero-badge">Kit de bolso pra rotina clínica</div>
     <h1>Na hora do atendimento, você não tem tempo de procurar no livro.</h1>
-    <p class="lead">120 cards de bolso com o protocolo que você precisa checar em segundos — direto na cadeira clínica, não pra decorar pra prova.</p>
+    <p class="lead">120 cards de bolso com o protocolo que você precisa checar em segundos, direto na cadeira clínica, não pra decorar pra prova.</p>
+
+    <div class="img-placeholder" style="min-height:220px">
+      <span class="icon">🖼️</span>
+      <span>Foto do kit ClinCards<br>(mão segurando os cards / jaleco)</span>
+    </div>
+
     <div class="btn-wrap">
-      <a class="btn" href="https://pay.cakto.com.br/328k8g8_986696" onclick="fbq('track','InitiateCheckout')">Quero meu kit ClinCards — R$37</a>
-      <div class="price-line"><span class="price-old">R$197</span><span class="price-new">R$37</span> à vista</div>
+      <a class="btn btn-ghost" href="#oferta">Ver a oferta completa ↓</a>
     </div>
   </div>
 </section>
@@ -247,7 +267,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
     <h2>Você já travou na frente do paciente?</h2>
     <ul class="problem-list">
       <li><span class="mark">✕</span> Já travou porque não lembrava o próximo passo do protocolo?</li>
-      <li><span class="mark">✕</span> Já ficou sem saber o que fazer quando algo saiu do previsto na cadeira — uma reação, um sangramento, uma dúvida de anestesia?</li>
+      <li><span class="mark">✕</span> Já ficou sem saber o que fazer quando algo saiu do previsto na cadeira: uma reação, um sangramento, uma dúvida de anestesia?</li>
       <li><span class="mark">✕</span> E o supervisor não estava do seu lado?</li>
     </ul>
     <p>Isso não é falta de estudo. É que na hora do atendimento, ninguém para pra abrir o livro.</p>
@@ -259,7 +279,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="kicker">A solução</div>
     <h2>Feito pra ficar com você durante o atendimento</h2>
-    <p class="lead">O ClinCards é um kit de 120 cards de bolso — não pra estudar antes da prova, pra consultar enquanto você atende.</p>
+    <p class="lead">O ClinCards é um kit de 120 cards de bolso, não pra estudar antes da prova, pra consultar enquanto você atende.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -267,7 +287,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div><h3>O que checar</h3><p style="margin:0">O sinal de alerta que muda a conduta — com a fonte clínica por trás, não achismo.</p></div>
+        <div><h3>O que checar</h3><p style="margin:0">O sinal de alerta que muda a conduta, com a fonte clínica por trás, não achismo.</p></div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -286,7 +306,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
       <li><span class="tick">✓</span> 120 cards organizados em 11 áreas clínicas (Anestesia, Cirurgia, Endodontia, Periodontia, Prótese, Odontopediatria, Urgências e mais)</li>
       <li><span class="tick">✓</span> Alerta vermelho de "quando parar" em cada card</li>
       <li><span class="tick">✓</span> Fonte clínica citada card a card (Malamed, Wheeler, Cohen, Sturdevant, entre outras referências)</li>
-      <li><span class="tick">✓</span> Cabe no bolso do jaleco — consulta em segundos, sem parar o atendimento</li>
+      <li><span class="tick">✓</span> Cabe no bolso do jaleco: consulta em segundos, sem parar o atendimento</li>
     </ul>
   </div>
 </section>
@@ -297,6 +317,11 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
     <div class="kicker">Veja um card real</div>
     <h2>Reconheça. Avalie. Conduza.</h2>
     <p>É assim que cada card te leva do sinal ao próximo passo, com o alerta vermelho mostrando quando parar e chamar o supervisor.</p>
+
+    <div class="img-placeholder" style="min-height:180px">
+      <span class="icon">🖼️</span>
+      <span>Foto real de 2 a 3 cards impressos e plastificados</span>
+    </div>
   </div>
   <div class="demo-scroll">
     <div class="demo-card">
@@ -324,7 +349,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
       <div class="alert-box">⚠ Aumento progressivo: comunicar supervisor</div>
     </div>
   </div>
-  <div class="wrap"><p class="demo-caption">3 de 120 cards — cobrindo 11 áreas clínicas.</p></div>
+  <div class="wrap"><p class="demo-caption">3 de 120 cards, cobrindo 11 áreas clínicas.</p></div>
 </section>
 
 <!-- BÔNUS (EMPILHAMENTO) -->
@@ -332,33 +357,38 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="kicker">Bônus inclusos hoje</div>
     <h2>4 bônus pra completar sua rotina clínica</h2>
-    <p>Incluídos sem custo extra na sua compra de hoje — cada um resolve uma dor específica da rotina na cadeira.</p>
+    <p>Incluídos sem custo extra na sua compra de hoje: cada um resolve uma dor específica da rotina na cadeira.</p>
+
+    <div class="img-placeholder" style="min-height:160px">
+      <span class="icon">🖼️</span>
+      <span>Foto dos bônus impressos (cartão-capa + checklist)</span>
+    </div>
 
     <div class="bonus-card">
       <div class="bonus-num">1</div>
       <div>
-        <h3 style="margin-bottom:4px">Cartão-Capa "Protocolo de Segurança" <span style="color:var(--teal);font-weight:700;font-size:0.8rem;">· Valor R$29</span></h3>
-        <p>Card extra pra ficar por cima do baralho — números de emergência (SAMU), sequência de ação em urgência médica, referência instantânea.</p>
+        <h3 style="margin-bottom:4px">Cartão-Capa "Protocolo de Segurança" <span class="bonus-value">· Valor R$29</span></h3>
+        <p>Card extra pra ficar por cima do baralho: números de emergência (SAMU), sequência de ação em urgência médica, referência instantânea.</p>
       </div>
     </div>
     <div class="bonus-card">
       <div class="bonus-num">2</div>
       <div>
-        <h3 style="margin-bottom:4px">Cartão de Emergências Personalizável <span style="color:var(--teal);font-weight:700;font-size:0.8rem;">· Valor R$24</span></h3>
-        <p>Campo em branco pra preencher com o protocolo/contatos da sua clínica-escola — personaliza o kit pro local real onde você atende.</p>
+        <h3 style="margin-bottom:4px">Cartão de Emergências Personalizável <span class="bonus-value">· Valor R$24</span></h3>
+        <p>Campo em branco pra preencher com o protocolo/contatos da sua clínica-escola: personaliza o kit pro local real onde você atende.</p>
       </div>
     </div>
     <div class="bonus-card">
       <div class="bonus-num">3</div>
       <div>
-        <h3 style="margin-bottom:4px">Checklist de Biossegurança e Preparo de Box <span style="color:var(--teal);font-weight:700;font-size:0.8rem;">· Valor R$27</span></h3>
-        <p>Checklist impresso de EPI, esterilização e organização do box antes de receber o paciente — uso diário, não consulta ocasional.</p>
+        <h3 style="margin-bottom:4px">Checklist de Biossegurança e Preparo de Box <span class="bonus-value">· Valor R$27</span></h3>
+        <p>Checklist impresso de EPI, esterilização e organização do box antes de receber o paciente: uso diário, não consulta ocasional.</p>
       </div>
     </div>
     <div class="bonus-card">
       <div class="bonus-num">4</div>
       <div>
-        <h3 style="margin-bottom:4px">Guia de Organização Física do Kit <span style="color:var(--teal);font-weight:700;font-size:0.8rem;">· Valor R$20</span></h3>
+        <h3 style="margin-bottom:4px">Guia de Organização Física do Kit <span class="bonus-value">· Valor R$20</span></h3>
         <p>Etiquetas por área/cor + sugestão de como carregar o baralho no jaleco/necessaire clínica.</p>
       </div>
     </div>
@@ -370,12 +400,12 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   <div class="wrap">
     <div class="kicker">Por que confiar</div>
     <h2>Protocolo com fonte, não resumo de caderno</h2>
-    <p class="lead">Cada card cita a referência por trás e traz um alerta específico de quando a situação foge do esperado e exige supervisão. Isso não existe em resumo de estudo — existe em ferramenta feita pra decisão real.</p>
+    <p class="lead">Cada card cita a referência por trás e traz um alerta específico de quando a situação foge do esperado e exige supervisão. Isso não existe em resumo de estudo. Existe em ferramenta feita pra decisão real.</p>
     <ul class="problem-list" style="margin-top:6px">
-      <li style="border-bottom:1px solid var(--border)"><span class="mark" style="color:var(--teal)">✓</span> Malamed — Manual de Anestesia Local</li>
-      <li style="border-bottom:1px solid var(--border)"><span class="mark" style="color:var(--teal)">✓</span> Wheeler — Anatomia Dental</li>
-      <li style="border-bottom:1px solid var(--border)"><span class="mark" style="color:var(--teal)">✓</span> Cohen — Caminhos da Polpa (Endodontia)</li>
-      <li><span class="mark" style="color:var(--teal)">✓</span> Sturdevant — Dentística Operatória</li>
+      <li style="border-bottom:1px solid var(--border)"><span class="mark" style="color:var(--brand)">✓</span> Malamed: Manual de Anestesia Local</li>
+      <li style="border-bottom:1px solid var(--border)"><span class="mark" style="color:var(--brand)">✓</span> Wheeler: Anatomia Dental</li>
+      <li style="border-bottom:1px solid var(--border)"><span class="mark" style="color:var(--brand)">✓</span> Cohen: Caminhos da Polpa (Endodontia)</li>
+      <li><span class="mark" style="color:var(--brand)">✓</span> Sturdevant: Dentística Operatória</li>
     </ul>
   </div>
 </section>
@@ -387,7 +417,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
     <h2>Empilhando o valor</h2>
     <table class="value-table">
       <tbody>
-        <tr><td>ClinCards — 120 cards clínicos (11 áreas)</td><td>R$97</td></tr>
+        <tr><td>ClinCards: 120 cards clínicos (11 áreas)</td><td>R$97</td></tr>
         <tr><td>Bônus 1: Cartão-Capa Protocolo de Segurança</td><td>R$29</td></tr>
         <tr><td>Bônus 2: Cartão de Emergências Personalizável</td><td>R$24</td></tr>
         <tr><td>Bônus 3: Checklist de Biossegurança</td><td>R$27</td></tr>
@@ -397,7 +427,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
       </tbody>
     </table>
     <div class="btn-wrap">
-      <a class="btn" href="https://pay.cakto.com.br/328k8g8_986696" onclick="fbq('track','InitiateCheckout')">Quero meu ClinCards agora — R$37</a>
+      <a class="btn" href="https://pay.cakto.com.br/328k8g8_986696" onclick="fbq('track','InitiateCheckout')">Quero meu ClinCards agora por R$37</a>
     </div>
   </div>
 </section>
@@ -406,9 +436,9 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 <section class="alt">
   <div class="wrap">
     <div class="guarantee-box">
-      <div class="seal">7d</div>
+      <img class="seal-img" src="assets/garantia-selo.png" alt="Selo de garantia de 7 dias" onerror="this.style.display='none'">
       <h3>Garantia incondicional</h3>
-      <p style="margin:0">Você tem 7 dias de garantia. Se não for pra você, devolvemos 100% — sem perguntas.</p>
+      <p style="margin:0">Você tem 7 dias de garantia. Se não for pra você, devolvemos 100%, sem perguntas.</p>
     </div>
   </div>
 </section>
@@ -429,7 +459,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
     </details>
     <details>
       <summary>Serve pra qualquer período da faculdade?</summary>
-      <p>É voltado pra quem já está atendendo paciente na clínica — clínica integrada, estágio ou clínica-escola.</p>
+      <p>É voltado pra quem já está atendendo paciente na clínica: clínica integrada, estágio ou clínica-escola.</p>
     </details>
     <details>
       <summary>Preciso de impressora especial?</summary>
@@ -443,7 +473,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   <div class="wrap">
     <h2>Leve o protocolo com você antes do próximo atendimento.</h2>
     <div class="btn-wrap">
-      <a class="btn" href="https://pay.cakto.com.br/328k8g8_986696" onclick="fbq('track','InitiateCheckout')">Quero meu kit ClinCards — R$37</a>
+      <a class="btn" href="https://pay.cakto.com.br/328k8g8_986696" onclick="fbq('track','InitiateCheckout')">Quero meu kit ClinCards por R$37</a>
       <div class="price-line"><span class="price-old">R$197</span><span class="price-new">R$37</span> à vista</div>
     </div>
   </div>
@@ -451,7 +481,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 
 <footer>
   <div class="wrap">
-    <p>ClinCards © 2026. Material de apoio clínico — não substitui julgamento profissional nem supervisão.</p>
+    <p>ClinCards © 2026. Material de apoio clínico. Não substitui julgamento profissional nem supervisão.</p>
   </div>
 </footer>
 
