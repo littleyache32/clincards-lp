@@ -227,6 +227,45 @@
     margin:14px 0 4px;font-size:0.78rem;color:var(--ink-soft);font-weight:600;
   }
 
+  /* Dark hero block */
+  .hero{
+    background:linear-gradient(160deg,var(--brand) 0%,var(--brand-dark) 100%);
+    padding:40px 0 48px;color:#fff;
+  }
+  .hero h1{color:#fff;}
+  .hero p.lead{color:rgba(255,255,255,0.88);}
+  .hero .img-placeholder{background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.28);color:rgba(255,255,255,0.75);}
+  .hero .btn-ghost{color:#fff;border-color:#fff;}
+
+  /* Dark offer block */
+  #oferta{background:linear-gradient(160deg,var(--brand) 0%,var(--brand-dark) 100%);}
+  #oferta .kicker{color:#a9c4e8;}
+  #oferta h2, #oferta p.lead{color:#fff;}
+  #oferta .trust-row{color:#c9d9ec;}
+
+  /* Bonus urgency banner */
+  .bonus-alert{
+    background:var(--tint);border:1px solid var(--brand);color:var(--brand-dark);
+    font-weight:700;font-size:0.85rem;padding:10px 14px;border-radius:10px;
+    margin:16px 0;text-align:center;
+  }
+  .today-only{text-align:center;font-size:0.82rem;color:rgba(255,255,255,0.85);margin-top:10px;font-weight:600;}
+
+  /* Marquee: what's inside preview */
+  .marquee{
+    overflow:hidden;width:100%;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  }
+  .marquee-track{display:flex;gap:14px;width:max-content;padding:4px 0 8px;animation:marquee-right 34s linear infinite;}
+  @keyframes marquee-right{from{transform:translateX(-50%);}to{transform:translateX(0%);}}
+  .mini-card{
+    flex:0 0 168px;background:#fff;border:1px solid var(--border);border-radius:12px;
+    padding:14px;box-shadow:0 2px 8px rgba(16,31,46,0.06);
+  }
+  .mini-card .area{font-size:0.66rem;color:var(--brand);font-weight:800;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px;}
+  .mini-card h4{font-size:0.9rem;font-weight:800;line-height:1.25;}
+
   @media(min-width:680px){
     h1{font-size:2.6rem;}
     h2{font-size:1.9rem;}
@@ -273,9 +312,9 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="hero-badge">Kit de bolso pra rotina clínica</div>
-    <h1>Na hora do atendimento, você não tem tempo de procurar no livro.</h1>
-    <p class="lead">120 cards de bolso com o protocolo que você precisa checar em segundos, direto na cadeira clínica, não pra decorar pra prova.</p>
+    <div class="hero-badge">Pra quem já atende paciente de verdade</div>
+    <h1>Você vai travar na cadeira. A diferença é ter o protocolo certo no bolso quando isso acontecer.</h1>
+    <p class="lead">120 cards de bolso com o protocolo que decide o atendimento, prontos em segundos, direto na cadeira clínica. Isso não é resumo pra prova. É ferramenta pra você não travar na frente do paciente.</p>
 
     <div class="img-placeholder" style="min-height:220px">
       <span class="icon">🖼️</span>
@@ -291,23 +330,23 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 <!-- PROBLEMA -->
 <section class="alt">
   <div class="wrap">
-    <div class="kicker">O problema</div>
-    <h2>Você já travou na frente do paciente?</h2>
+    <div class="kicker">🚨 O problema</div>
+    <h2>Travar na cadeira custa caro</h2>
     <ul class="problem-list">
-      <li><span class="mark">✕</span> Já travou porque não lembrava o próximo passo do protocolo?</li>
-      <li><span class="mark">✕</span> Já ficou sem saber o que fazer quando algo saiu do previsto na cadeira: uma reação, um sangramento, uma dúvida de anestesia?</li>
-      <li><span class="mark">✕</span> E o supervisor não estava do seu lado?</li>
+      <li><span class="mark">✕</span> Você trava, o paciente percebe, e sua confiança despenca ali na hora.</li>
+      <li><span class="mark">✕</span> Algo foge do script (uma reação, um sangramento, uma dúvida de anestesia) e você fica sem chão.</li>
+      <li><span class="mark">✕</span> O supervisor não tá do seu lado pra te salvar.</li>
     </ul>
-    <p>Isso não é falta de estudo. É que na hora do atendimento, ninguém para pra abrir o livro.</p>
+    <p>Isso não é falta de estudo. É que ninguém para o atendimento pra abrir o livro. E enquanto você procura, o paciente tá ali, esperando você parecer seguro.</p>
   </div>
 </section>
 
 <!-- SOLUÇÃO -->
 <section>
   <div class="wrap">
-    <div class="kicker">A solução</div>
-    <h2>Feito pra ficar com você durante o atendimento</h2>
-    <p class="lead">O ClinCards é um kit de 120 cards de bolso, não pra estudar antes da prova, pra consultar enquanto você atende.</p>
+    <div class="kicker">💡 A solução</div>
+    <h2>O card certo, no bolso, antes de precisar dele</h2>
+    <p class="lead">O ClinCards não é pra estudar antes da prova. É pra você abrir, achar a resposta em segundos e continuar o atendimento como se nunca tivesse travado.</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -325,10 +364,47 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- BENEFÍCIOS -->
+<!-- O QUE VEM DENTRO (CARROSSEL AUTOMÁTICO) -->
 <section class="alt">
   <div class="wrap">
-    <div class="kicker">O que você ganha</div>
+    <div class="kicker">👀 O que vem dentro</div>
+    <h2>Uma prévia do baralho</h2>
+    <p>12 exemplos dos temas cobertos nos 120 cards.</p>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="mini-card"><div class="area">Anestesia Local</div><h4>Bloqueio do Alveolar Inferior</h4></div>
+      <div class="mini-card"><div class="area">Cirurgia Oral</div><h4>Exodontia Simples</h4></div>
+      <div class="mini-card"><div class="area">Endodontia</div><h4>Abertura Coronária</h4></div>
+      <div class="mini-card"><div class="area">Periodontia</div><h4>Sondagem e Índices</h4></div>
+      <div class="mini-card"><div class="area">Dentística</div><h4>Preparo Classe II</h4></div>
+      <div class="mini-card"><div class="area">Prótese</div><h4>Moldagem Funcional</h4></div>
+      <div class="mini-card"><div class="area">Odontopediatria</div><h4>Manejo Comportamental</h4></div>
+      <div class="mini-card"><div class="area">Radiologia</div><h4>Técnica Periapical</h4></div>
+      <div class="mini-card"><div class="area">Semiologia</div><h4>Anamnese Clínica</h4></div>
+      <div class="mini-card"><div class="area">Biossegurança</div><h4>Paramentação e EPI</h4></div>
+      <div class="mini-card"><div class="area">Urgências</div><h4>Reconhecendo Anafilaxia</h4></div>
+      <div class="mini-card"><div class="area">Urgências</div><h4>Conduta na Síncope</h4></div>
+      <div class="mini-card"><div class="area">Anestesia Local</div><h4>Bloqueio do Alveolar Inferior</h4></div>
+      <div class="mini-card"><div class="area">Cirurgia Oral</div><h4>Exodontia Simples</h4></div>
+      <div class="mini-card"><div class="area">Endodontia</div><h4>Abertura Coronária</h4></div>
+      <div class="mini-card"><div class="area">Periodontia</div><h4>Sondagem e Índices</h4></div>
+      <div class="mini-card"><div class="area">Dentística</div><h4>Preparo Classe II</h4></div>
+      <div class="mini-card"><div class="area">Prótese</div><h4>Moldagem Funcional</h4></div>
+      <div class="mini-card"><div class="area">Odontopediatria</div><h4>Manejo Comportamental</h4></div>
+      <div class="mini-card"><div class="area">Radiologia</div><h4>Técnica Periapical</h4></div>
+      <div class="mini-card"><div class="area">Semiologia</div><h4>Anamnese Clínica</h4></div>
+      <div class="mini-card"><div class="area">Biossegurança</div><h4>Paramentação e EPI</h4></div>
+      <div class="mini-card"><div class="area">Urgências</div><h4>Reconhecendo Anafilaxia</h4></div>
+      <div class="mini-card"><div class="area">Urgências</div><h4>Conduta na Síncope</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section>
+  <div class="wrap">
+    <div class="kicker">📦 O que você ganha</div>
     <h2>Tudo isso por R$37</h2>
     <ul class="check-list">
       <li><span class="tick">✓</span> 120 cards organizados em 11 áreas clínicas (Anestesia, Cirurgia, Endodontia, Periodontia, Prótese, Odontopediatria, Urgências e mais)</li>
@@ -340,9 +416,9 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 </section>
 
 <!-- PROVA / DEMONSTRAÇÃO -->
-<section>
+<section class="alt">
   <div class="wrap">
-    <div class="kicker">Veja um card real</div>
+    <div class="kicker">🔍 Veja um card real</div>
     <h2>Reconheça. Avalie. Conduza.</h2>
     <p>É assim que cada card te leva do sinal ao próximo passo, com o alerta vermelho mostrando quando parar e chamar o supervisor.</p>
 
@@ -381,11 +457,12 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 </section>
 
 <!-- BÔNUS (EMPILHAMENTO) -->
-<section class="alt">
+<section>
   <div class="wrap">
-    <div class="kicker">Bônus inclusos hoje</div>
+    <div class="kicker">🎁 Bônus inclusos hoje</div>
     <h2>4 bônus pra completar sua rotina clínica</h2>
     <p>Incluídos sem custo extra na sua compra de hoje: cada um resolve uma dor específica da rotina na cadeira.</p>
+    <div class="bonus-alert">🔒 Esses 4 bônus são exclusivos de quem garante o ClinCards hoje. Depois de hoje, a oferta pode sair do ar.</div>
 
     <div class="img-placeholder" style="min-height:160px">
       <span class="icon">🖼️</span>
@@ -424,9 +501,9 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 </section>
 
 <!-- AUTORIDADE -->
-<section>
+<section class="alt">
   <div class="wrap">
-    <div class="kicker">Por que confiar</div>
+    <div class="kicker">📚 Por que confiar</div>
     <h2>Protocolo com fonte, não resumo de caderno</h2>
     <p class="lead">Cada card cita a referência por trás e traz um alerta específico de quando a situação foge do esperado e exige supervisão. Isso não existe em resumo de estudo. Existe em ferramenta feita pra decisão real.</p>
     <ul class="problem-list" style="margin-top:6px">
@@ -439,9 +516,9 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 </section>
 
 <!-- ÁREAS COBERTAS -->
-<section class="alt">
+<section>
   <div class="wrap">
-    <div class="kicker">Cobertura completa</div>
+    <div class="kicker">🗂️ Cobertura completa</div>
     <h2>11 áreas clínicas, 120 cards</h2>
     <p>Do diagnóstico à urgência, o baralho cobre a rotina inteira da clínica integrada.</p>
     <div class="areas-grid">
@@ -461,9 +538,9 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 </section>
 
 <!-- BENEFÍCIOS NA PRÁTICA -->
-<section>
+<section class="alt">
   <div class="wrap">
-    <div class="kicker">Resultado na prática</div>
+    <div class="kicker">📈 Resultado na prática</div>
     <h2>Usando o ClinCards, você ganha</h2>
     <div class="steps">
       <div class="step">
@@ -485,7 +562,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 <!-- OFERTA -->
 <section id="oferta">
   <div class="wrap">
-    <div class="kicker">Oferta</div>
+    <div class="kicker">💰 Oferta</div>
     <h2>Empilhando o valor</h2>
     <p class="lead" style="margin-bottom:6px">Kit completo. Uso vitalício, é seu pra sempre.</p>
     <table class="value-table">
@@ -507,6 +584,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
       <span>✅ Satisfação garantida</span>
       <span>🛡️ Dados protegidos</span>
     </div>
+    <p class="today-only">Preço de R$37 e os 4 bônus valem só pra quem compra agora.</p>
   </div>
 </section>
 
@@ -524,7 +602,7 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 <!-- FAQ -->
 <section>
   <div class="wrap">
-    <div class="kicker">Perguntas frequentes</div>
+    <div class="kicker">❓ Perguntas frequentes</div>
     <h2>Ainda com dúvida?</h2>
 
     <details>
@@ -553,7 +631,8 @@ src="https://www.facebook.com/tr?id=2805509369800902&ev=PageView&noscript=1"
 <!-- CTA FINAL -->
 <section class="alt final">
   <div class="wrap">
-    <h2>Leve o protocolo com você antes do próximo atendimento.</h2>
+    <h2>Você pode continuar torcendo pra não travar de novo. Ou garantir o ClinCards agora.</h2>
+    <p class="lead">Com os 4 bônus, antes que a oferta saia do ar.</p>
     <div class="btn-wrap">
       <a class="btn" href="https://pay.cakto.com.br/328k8g8_986696" onclick="fbq('track','InitiateCheckout')">Quero meu kit ClinCards por R$37</a>
       <div class="price-line"><span class="price-old">R$197</span><span class="price-new">R$37</span> à vista</div>
